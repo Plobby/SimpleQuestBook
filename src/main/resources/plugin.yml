@@ -1,0 +1,35 @@
+name: SimpleQuestBook
+main: me.plobnob.quest.SimpleQuestBook
+author: plobnob
+version: '1.0.0'
+api-version: '1.21'
+description: "A simple questbook system for viewing available quests in the world"
+
+softdepend: [ "PlaceholderAPI" ]
+
+commands:
+  questbook:
+    aliases: [ qb ]
+    permission: questbook
+    permission-message: ""
+    description: Opens the quest book
+    usage: "/questbook <open | create | edit | delete>"
+
+permissions:
+  questbook:
+    description: "Access to use the questbook system"
+  questbook.open:
+    description: "Access to open the questbook"
+  questbook.view:
+    description: "Access to view quests with a given name"
+    children:
+      questbook.view.all: true
+  questbook.edit:
+    description: "Access to edit quests"
+    default: op
+  questbook.create:
+    description: "Access to create quests"
+    default: op
+  questbook.delete:
+    description: "Access to delete quests"
+    default: op
